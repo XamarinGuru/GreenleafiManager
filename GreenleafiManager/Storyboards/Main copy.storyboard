@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RMx-3f-FxP">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Master-->
+        <scene sceneID="pY4-Hu-kfo">
+            <objects>
+                <navigationController title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                        <rect key="frame" x="0.0" y="20" width="1728" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="69" kind="relationship" relationship="rootViewController" id="436"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-38" y="-630"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="68">
+            <objects>
+                <viewController storyboardIdentifier="MasterInventoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="69" customClass="MasterInventoryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="66"/>
+                        <viewControllerLayoutGuide type="bottom" id="67"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="70">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="608">
+                                <rect key="frame" x="0.0" y="66" width="66" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="621"/>
+                                </constraints>
+                                <state key="normal" title="Scan">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ScanButton_TouchUpInside:" destination="69" eventType="touchUpInside" id="614"/>
+                                </connections>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="35" y="67" width="46" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="920" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="886" y="67" width="46" height="30"/>
+                                <state key="normal" title="Filter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="943" y="67" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="FilterButton_TouchUpInside:" destination="69" id="922" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="608" firstAttribute="leading" secondItem="70" secondAttribute="leading" id="619"/>
+                            <constraint firstItem="608" firstAttribute="top" secondItem="70" secondAttribute="top" constant="67" id="620"/>
+                            <constraint id="925" firstItem="920" firstAttribute="top" secondItem="70" secondAttribute="top" constant="67"/>
+                            <constraint id="926" firstItem="70" firstAttribute="trailing" secondItem="920" secondAttribute="trailing" constant="35"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="920"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="925"/>
+                                <exclude reference="926"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="920"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="925"/>
+                                <include reference="926"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="88"/>
+                    <connections>
+                        <outlet property="ScanButton" destination="608" id="name-outlet-608"/>
+                        <outlet property="FilterButton" destination="920" id="name-outlet-920"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="71" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101" y="-632"/>
+        </scene>
+        <!--Inventory Detail View Controller-->
+        <scene sceneID="444">
+            <objects>
+                <viewController storyboardIdentifier="InventoryDetailViewController_old" useStoryboardIdentifierAsRestorationIdentifier="YES" id="445" customClass="InventoryDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="442"/>
+                        <viewControllerLayoutGuide type="bottom" id="443"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="446">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="GL Code" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="484">
+                                <rect key="frame" x="20" y="-35" width="74" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="485">
+                                <rect key="frame" x="102" y="-39" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ItemCode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="467" userLabel="ItemCode" tag="1" adjustsFontSizeToFit="NO">
+                                <rect key="frame" x="668" y="516" width="183" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="224" width="333" height="30"/>
+                                </variation>
+                                <connections/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="487" userLabel="MetalCode" tag="2" text="MetalCode" adjustsFontSizeToFit="NO">
+                                <rect key="frame" x="108" y="348" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="361" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="grw-Nr-BfZ" userLabel="SecretCode" tag="3" text="SecretCode" adjustsFontSizeToFit="NO">
+                                <rect key="frame" x="108" y="381" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="262" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TagPrice" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iw0-HA-dqv" userLabel="TagPrice" tag="6" adjustsFontSizeToFit="NO" enabled="NO">
+                                <rect key="frame" x="108" y="493" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="300" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ANJ-4e-B2S" userLabel="Sku" tag="7" text="Sku" adjustsFontSizeToFit="NO">
+                                <rect key="frame" x="108" y="537" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="516" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="InfoLine1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IDZ-XB-QDn" userLabel="InfoLine1" tag="8" adjustsFontSizeToFit="NO">
+                                <rect key="frame" x="329" y="314" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="399" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o6V-E1-Yrz" userLabel="InfoLine2" tag="9" text="InfoLine2" adjustsFontSizeToFit="NO">
+                                <rect key="frame" x="329" y="347" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="438" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o8o-c3-OXl" userLabel="InfoLine3" tag="10" text="InfoLine3" adjustsFontSizeToFit="NO">
+                                <rect key="frame" x="329" y="380" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="476" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="350" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="538">
+                                <rect key="frame" x="308" y="196" width="118" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Replace Image">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButton538_TouchUpInside:" destination="445" eventType="touchUpInside" id="539"/>
+                                </connections>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="849" y="140" width="175" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="350" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCB-VX-dN3">
+                                <rect key="frame" x="308" y="110" width="118" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Add To Invoice">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="AddToInvoice_TouchUpInside:" destination="445" eventType="touchUpInside" id="639"/>
+                                </connections>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="849" y="54" width="175" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="350" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1p-qH-2AT">
+                                <rect key="frame" x="308" y="140" width="118" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Create Appraisal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="CreateAppraisal_TouchUpInside:" destination="445" eventType="touchUpInside" id="640"/>
+                                </connections>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="849" y="85" width="175" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="350" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ud-LN-wyB">
+                                <rect key="frame" x="308" y="168" width="118" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Move Item">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="MoveItem_TouchUpInside:" destination="445" eventType="touchUpInside" id="641"/>
+                                </connections>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="849" y="112" width="175" height="30"/>
+                                </variation>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sold" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="647">
+                                <rect key="frame" x="241" y="469" width="66" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="859" y="180" width="66" height="21"/>
+                                </variation>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="648">
+                                <rect key="frame" x="328" y="466" width="79" height="27"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="916" y="177" width="79" height="27"/>
+                                </variation>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="974" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="108" y="256" width="199" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButton974_TouchUpInside:" destination="445" id="978" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1097" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="545" y="211" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChangeVendorCodeButton_TouchUpInside:" destination="1099" id="1098" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1104" userLabel="MetalCode" tag="2" adjustsFontSizeToFit="NO" borderStyle="roundedRect" placeholder="GLC" misplaced="YES">
+                                <rect key="frame" x="450" y="224" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="decimalPad"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="361" width="333" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="GlCostEdited:" destination="1099" id="1105" eventType="editingDidEnd"/>
+                                    <action selector="GlCostChanged:" destination="1099" id="1106" eventType="editingChanged"/>
+                                    <action selector="GLCostDidEndEditing:" destination="445" id="1122" eventType="editingDidEnd"/>
+                                    <action selector="TouchUpInsdeGLCost:" destination="445" id="1123" eventType="touchUpInside"/>
+                                    <action selector="TouchDownGLCost:" destination="445" id="1138" eventType="touchDown"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1107" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="645" y="314" width="50" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChangeVendorCodeButton_TouchUpInside:" destination="1109" id="1108" eventType="touchUpInside"/>
+                                    <action selector="ItemCodeChangeButton_TouchUpInside:" destination="1111" id="1110" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1112" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="604" y="332" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChangeVendorCodeButton_TouchUpInside:" destination="1114" id="1113" eventType="touchUpInside"/>
+                                    <action selector="ItemCodeChangeButton_TouchUpInside:" destination="1116" id="1115" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1117" userLabel="MetalCode" tag="2" adjustsFontSizeToFit="NO" fixedFrame="YES" borderStyle="roundedRect" placeholder="IC">
+                                <rect key="frame" x="645" y="314" width="60" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="decimalPad"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="361" width="333" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="GlCostEdited:" destination="1119" id="1118" eventType="editingDidEnd"/>
+                                    <action selector="GlCostChanged:" destination="1119" id="1120" eventType="editingChanged"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="GL" lineBreakMode="tailTruncation" minimumFontSize="10" id="1121" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" textAlignment="right">
+                                <rect key="frame" x="678" y="224" width="40" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint id="670" firstItem="467" firstAttribute="leading" secondItem="446" secondAttribute="leading" constant="450"/>
+                            <constraint id="672" firstItem="grw-Nr-BfZ" firstAttribute="leading" secondItem="446" secondAttribute="leading" constant="450"/>
+                            <constraint id="674" firstItem="Iw0-HA-dqv" firstAttribute="leading" secondItem="446" secondAttribute="leading" constant="450"/>
+                            <constraint id="678" firstItem="grw-Nr-BfZ" firstAttribute="top" secondItem="467" secondAttribute="centerY" constant="23">
+                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                            </constraint>
+                            <constraint id="679" firstItem="Iw0-HA-dqv" firstAttribute="top" secondItem="grw-Nr-BfZ" secondAttribute="centerY" constant="23">
+                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                            </constraint>
+                            <constraint id="680" firstItem="446" firstAttribute="trailing" secondItem="Iw0-HA-dqv" secondAttribute="trailing" constant="241"/>
+                            <constraint id="682" firstItem="446" firstAttribute="trailing" secondItem="487" secondAttribute="trailing" constant="241"/>
+                            <constraint id="683" firstItem="487" firstAttribute="leading" secondItem="446" secondAttribute="leading" constant="450"/>
+                            <constraint id="684" firstItem="IDZ-XB-QDn" firstAttribute="leading" secondItem="446" secondAttribute="leading" constant="450"/>
+                            <constraint id="685" firstItem="446" firstAttribute="trailing" secondItem="IDZ-XB-QDn" secondAttribute="trailing" constant="241"/>
+                            <constraint id="686" firstItem="IDZ-XB-QDn" firstAttribute="top" secondItem="487" secondAttribute="centerY" constant="23">
+                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                            </constraint>
+                            <constraint id="687" firstItem="o6V-E1-Yrz" firstAttribute="leading" secondItem="446" secondAttribute="leading" constant="450"/>
+                            <constraint id="688" firstItem="446" firstAttribute="trailing" secondItem="o6V-E1-Yrz" secondAttribute="trailing" constant="241"/>
+                            <constraint id="689" firstItem="o6V-E1-Yrz" firstAttribute="top" secondItem="IDZ-XB-QDn" secondAttribute="centerY" constant="24">
+                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                            </constraint>
+                            <constraint id="690" firstItem="o8o-c3-OXl" firstAttribute="top" secondItem="o6V-E1-Yrz" secondAttribute="centerY" constant="23">
+                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                            </constraint>
+                            <constraint id="691" firstItem="o8o-c3-OXl" firstAttribute="leading" secondItem="446" secondAttribute="leading" constant="450"/>
+                            <constraint id="692" firstItem="446" firstAttribute="trailing" secondItem="o8o-c3-OXl" secondAttribute="trailing" constant="241"/>
+                            <constraint id="695" firstItem="446" firstAttribute="trailing" secondItem="467" secondAttribute="trailing" constant="241"/>
+                            <constraint id="696" firstItem="446" firstAttribute="trailing" secondItem="grw-Nr-BfZ" secondAttribute="trailing" constant="241"/>
+                            <constraint id="698" firstItem="ANJ-4e-B2S" firstAttribute="top" secondItem="o8o-c3-OXl" secondAttribute="centerY" constant="25">
+                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                            </constraint>
+                            <constraint id="699" firstItem="ANJ-4e-B2S" firstAttribute="leading" secondItem="446" secondAttribute="leading" constant="450"/>
+                            <constraint id="700" firstItem="446" firstAttribute="trailing" secondItem="ANJ-4e-B2S" secondAttribute="trailing" constant="241"/>
+                            <constraint id="747" firstItem="467" firstAttribute="top" secondItem="442" secondAttribute="bottom" constant="204">
+                                <variation key="heightClass=regular-widthClass=regular" constant="160"/>
+                            </constraint>
+                            <constraint id="752" firstItem="487" firstAttribute="top" secondItem="Iw0-HA-dqv" secondAttribute="centerY" constant="46">
+                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                            </constraint>
+                            <constraint id="762" firstItem="wCB-VX-dN3" firstAttribute="top" secondItem="442" secondAttribute="bottom" constant="34"/>
+                            <constraint id="763" firstItem="446" firstAttribute="trailing" secondItem="wCB-VX-dN3" secondAttribute="trailing" constant="29"/>
+                            <constraint id="764" firstItem="x1p-qH-2AT" firstAttribute="top" secondItem="wCB-VX-dN3" secondAttribute="centerY" constant="15"/>
+                            <constraint id="765" firstItem="446" firstAttribute="trailing" secondItem="x1p-qH-2AT" secondAttribute="trailing" constant="29"/>
+                            <constraint id="766" firstItem="3ud-LN-wyB" firstAttribute="top" secondItem="x1p-qH-2AT" secondAttribute="centerY" constant="13"/>
+                            <constraint id="767" firstItem="446" firstAttribute="trailing" secondItem="3ud-LN-wyB" secondAttribute="trailing" constant="29"/>
+                            <constraint id="768" firstItem="538" firstAttribute="top" secondItem="3ud-LN-wyB" secondAttribute="centerY" constant="13"/>
+                            <constraint id="769" firstItem="446" firstAttribute="trailing" secondItem="538" secondAttribute="trailing" constant="29"/>
+                            <constraint id="776" firstItem="446" firstAttribute="trailing" secondItem="648" secondAttribute="trailing" constant="20">
+                                <variation key="heightClass=regular-widthClass=regular" constant="29"/>
+                            </constraint>
+                            <constraint id="777" firstItem="446" firstAttribute="trailing" secondItem="647" secondAttribute="trailing" constant="90">
+                                <variation key="heightClass=regular-widthClass=regular" constant="95"/>
+                            </constraint>
+                            <constraint id="778" firstItem="647" firstAttribute="top" secondItem="538" secondAttribute="centerY" constant="25"/>
+                            <constraint id="781" firstItem="648" firstAttribute="top" secondItem="538" secondAttribute="centerY" constant="22"/>
+                            <constraint id="975" firstItem="974" firstAttribute="leading" secondItem="446" secondAttribute="leading" constant="450"/>
+                            <constraint id="976" firstItem="974" firstAttribute="top" secondItem="442" secondAttribute="bottom" constant="154"/>
+                            <constraint id="977" firstItem="446" firstAttribute="trailing" secondItem="974" secondAttribute="trailing" constant="200"/>
+                            <constraint id="1132" firstItem="1104" firstAttribute="top" secondItem="442" secondAttribute="bottom" constant="204"/>
+                            <constraint id="1133" firstItem="446" firstAttribute="trailing" secondItem="1104" secondAttribute="trailing" constant="241"/>
+                            <constraint id="1134" firstItem="1104" firstAttribute="leading" secondItem="446" secondAttribute="leading" constant="450"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="670"/>
+                                <exclude reference="672"/>
+                                <exclude reference="674"/>
+                                <exclude reference="678"/>
+                                <exclude reference="679"/>
+                                <exclude reference="680"/>
+                                <exclude reference="682"/>
+                                <exclude reference="683"/>
+                                <exclude reference="684"/>
+                                <exclude reference="685"/>
+                                <exclude reference="686"/>
+                                <exclude reference="687"/>
+                                <exclude reference="688"/>
+                                <exclude reference="689"/>
+                                <exclude reference="690"/>
+                                <exclude reference="691"/>
+                                <exclude reference="692"/>
+                                <exclude reference="695"/>
+                                <exclude reference="696"/>
+                                <exclude reference="698"/>
+                                <exclude reference="699"/>
+                                <exclude reference="700"/>
+                                <exclude reference="747"/>
+                                <exclude reference="752"/>
+                                <exclude reference="762"/>
+                                <exclude reference="763"/>
+                                <exclude reference="764"/>
+                                <exclude reference="765"/>
+                                <exclude reference="766"/>
+                                <exclude reference="767"/>
+                                <exclude reference="768"/>
+                                <exclude reference="769"/>
+                                <exclude reference="776"/>
+                                <exclude reference="777"/>
+                                <exclude reference="778"/>
+                                <exclude reference="781"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="670"/>
+                                <include reference="672"/>
+                                <include reference="674"/>
+                                <include reference="678"/>
+                                <include reference="679"/>
+                                <include reference="680"/>
+                                <include reference="682"/>
+                                <include reference="683"/>
+                                <include reference="684"/>
+                                <include reference="685"/>
+                                <include reference="686"/>
+                                <include reference="687"/>
+                                <include reference="688"/>
+                                <include reference="689"/>
+                                <include reference="690"/>
+                                <include reference="691"/>
+                                <include reference="692"/>
+                                <include reference="695"/>
+                                <include reference="696"/>
+                                <include reference="698"/>
+                                <include reference="699"/>
+                                <include reference="700"/>
+                                <include reference="747"/>
+                                <include reference="752"/>
+                                <include reference="762"/>
+                                <include reference="763"/>
+                                <include reference="764"/>
+                                <include reference="765"/>
+                                <include reference="766"/>
+                                <include reference="767"/>
+                                <include reference="768"/>
+                                <include reference="769"/>
+                                <include reference="776"/>
+                                <include reference="777"/>
+                                <include reference="778"/>
+                                <include reference="781"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="AddToInvoice" destination="wCB-VX-dN3" id="name-outlet-wCB-VX-dN3"/>
+                        <outlet property="CreateAppraisal" destination="x1p-qH-2AT" id="name-outlet-x1p-qH-2AT"/>
+                        <outlet property="InfoLine1" destination="IDZ-XB-QDn" id="name-outlet-IDZ-XB-QDn"/>
+                        <outlet property="InfoLine2" destination="o6V-E1-Yrz" id="name-outlet-o6V-E1-Yrz"/>
+                        <outlet property="InfoLine3" destination="o8o-c3-OXl" id="name-outlet-o8o-c3-OXl"/>
+                        <outlet property="ItemCode" destination="467" id="name-outlet-467"/>
+                        <outlet property="Metal" destination="487" id="name-outlet-487"/>
+                        <outlet property="MoveItem" destination="3ud-LN-wyB" id="name-outlet-3ud-LN-wyB"/>
+                        <outlet property="ReplaceImage" destination="538" id="name-outlet-538"/>
+                        <outlet property="Secret" destination="grw-Nr-BfZ" id="name-outlet-grw-Nr-BfZ"/>
+                        <outlet property="Sku" destination="ANJ-4e-B2S" id="name-outlet-ANJ-4e-B2S"/>
+                        <outlet property="TagPrice" destination="Iw0-HA-dqv" id="name-outlet-Iw0-HA-dqv"/>
+                        <outlet property="SoldSwitch" destination="648" id="name-outlet-648"/>
+                        <outlet property="ItemCodeButton" destination="974" id="name-outlet-974"/>
+                        <outlet property="ItemCodeChangeButton" destination="1117" id="name-outlet-1117"/>
+                        <outlet property="GLCostTextField" destination="1104" id="name-outlet-1104"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="447" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2272" y="-634"/>
+        </scene>
+        <scene sceneID="966">
+            <objects>
+                <viewController id="967" sceneMemberID="viewController" customClass="TagEditorViewController" storyboardIdentifier="TagEditorViewController" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="964"/>
+                        <viewControllerLayoutGuide type="bottom" id="965"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="968">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1037" userLabel="MetalCode" tag="2" adjustsFontSizeToFit="NO" fixedFrame="YES" placeholder="Item Code" borderStyle="roundedRect">
+                                <rect key="frame" x="525" y="229" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="361" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1038" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="648" y="239" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChangeVendorCodeButton_TouchUpInside:" destination="1040" id="1039" eventType="touchUpInside"/>
+                                    <action selector="ItemCodeChangeButton_TouchUpInside:" destination="967" id="1042" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1028" userLabel="MetalCode" tag="2" adjustsFontSizeToFit="NO" fixedFrame="YES" placeholder="Vendor Code" borderStyle="roundedRect">
+                                <rect key="frame" x="525" y="191" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="361" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1029" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="525" y="191" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChangeVendorCodeButton_TouchUpInside:" destination="967" id="1030" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Vendor Code" lineBreakMode="tailTruncation" minimumFontSize="10" id="1021" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="298" y="191" width="194" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Item Code" lineBreakMode="tailTruncation" minimumFontSize="10" id="1041" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="298" y="229" width="194" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="GL Cost" lineBreakMode="tailTruncation" minimumFontSize="10" id="1049" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="298" y="267" width="194" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="New GL Short Code" lineBreakMode="tailTruncation" minimumFontSize="10" id="1051" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="379" y="334" width="266" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1043" userLabel="MetalCode" tag="2" adjustsFontSizeToFit="NO" fixedFrame="YES" placeholder="GL Cost" borderStyle="roundedRect">
+                                <rect key="frame" x="525" y="267" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="decimalPad"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="361" width="333" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="GlCostEdited:" destination="967" id="1055" eventType="editingDidEnd"/>
+                                    <action selector="GlCostChanged:" destination="967" id="1077" eventType="editingChanged"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="1060" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" textAlignment="center">
+                                <rect key="frame" x="379" y="389" width="266" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="VendorCodeTextField" destination="1028" id="name-outlet-1028"/>
+                        <outlet property="ChangeVendorCodeButton" destination="1029" id="name-outlet-1029"/>
+                        <outlet property="ItemCodeChangeButton" destination="1038" id="name-outlet-1038"/>
+                        <outlet property="ItemCodeTextField" destination="1037" id="name-outlet-1037"/>
+                        <outlet property="GLCostTextField" destination="1043" id="name-outlet-1043"/>
+                        <outlet property="GLShortCodeTextField" destination="1060" id="name-outlet-1060"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="969" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2276" y="221"/>
+        </scene>
+        <scene sceneID="1086">
+            <objects>
+                <viewController id="1087" sceneMemberID="viewController" customClass="PhotoViewerViewController" storyboardIdentifier="PhotoViewerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1084"/>
+                        <viewControllerLayoutGuide type="bottom" id="1085"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1088">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1089" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2256" y="1105"/>
+        </scene>
+        <scene sceneID="1143">
+            <objects>
+                <viewController id="1144" sceneMemberID="viewController" customClass="InventoryDetailViewController" storyboardIdentifier="InventoryDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1141"/>
+                        <viewControllerLayoutGuide type="bottom" id="1142"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1145">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1153" userLabel="MetalCode" tag="2" adjustsFontSizeToFit="NO" fixedFrame="YES" placeholder="IC">
+                                <rect key="frame" x="592" y="287" width="80" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="361" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1154" userLabel="MetalCode" tag="2" adjustsFontSizeToFit="NO" fixedFrame="YES" placeholder="TSOC" textAlignment="center">
+                                <rect key="frame" x="492" y="287" width="100" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" keyboardType="decimalPad"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="361" width="333" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="GlCostEdited:" destination="1152" id="1155" eventType="editingDidEnd"/>
+                                    <action selector="GlCostChanged:" destination="1152" id="1156" eventType="editingChanged"/>
+                                    <action selector="GLCostDidEndEditing:" destination="1144" id="1202" eventType="editingDidEnd"/>
+                                    <action selector="TouchDownGLCost:" destination="1144" id="1203" eventType="touchDown"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1160" userLabel="Sku" tag="7" text="Sku" adjustsFontSizeToFit="NO" fixedFrame="YES" placeholder="Sku">
+                                <rect key="frame" x="452" y="585" width="300" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="516" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TagPrice" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1161" userLabel="TagPrice" tag="6" adjustsFontSizeToFit="NO" enabled="NO" fixedFrame="YES" placeholder="Price">
+                                <rect key="frame" x="452" y="371" width="300" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="300" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1162" userLabel="SecretCode" tag="3" text="SecretCode" adjustsFontSizeToFit="NO" fixedFrame="YES" placeholder="SCode">
+                                <rect key="frame" x="452" y="326" width="300" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="262" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1163" userLabel="MetalCode" tag="2" text="MetalCode" adjustsFontSizeToFit="NO" fixedFrame="YES" placeholder="MCode">
+                                <rect key="frame" x="452" y="444" width="300" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="361" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1165" userLabel="InfoLine3" tag="10" text="InfoLine3" adjustsFontSizeToFit="NO" fixedFrame="YES" placeholder="Info3">
+                                <rect key="frame" x="452" y="547" width="300" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="476" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1167" userLabel="InfoLine2" tag="9" text="InfoLine2" adjustsFontSizeToFit="NO" fixedFrame="YES" placeholder="Info2">
+                                <rect key="frame" x="452" y="515" width="300" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="438" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="InfoLine1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1168" userLabel="InfoLine1" tag="8" adjustsFontSizeToFit="NO" fixedFrame="YES" placeholder="Info1">
+                                <rect key="frame" x="452" y="482" width="300" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="448" y="399" width="333" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="350" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1169" fixedFrame="YES">
+                                <rect key="frame" x="800" y="220" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Add Image">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButton538_TouchUpInside:" destination="1171" eventType="touchUpInside" id="1170"/>
+                                    <action selector="UIButton538_TouchUpInside:" destination="1144" id="1183" eventType="touchUpInside"/>
+                                </connections>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="849" y="140" width="175" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="350" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1172" fixedFrame="YES">
+                                <rect key="frame" x="800" y="185" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Move Item">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="MoveItem_TouchUpInside:" destination="1171" eventType="touchUpInside" id="1173"/>
+                                    <action selector="MoveItem_TouchUpInside:" destination="1144" id="1182" eventType="touchUpInside"/>
+                                </connections>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="849" y="112" width="175" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="350" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1174" fixedFrame="YES">
+                                <rect key="frame" x="800" y="150" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Create Appraisal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="CreateAppraisal_TouchUpInside:" destination="1171" eventType="touchUpInside" id="1175"/>
+                                    <action selector="CreateAppraisal_TouchUpInside:" destination="1144" id="1181" eventType="touchUpInside"/>
+                                </connections>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="849" y="85" width="175" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="350" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1176" fixedFrame="YES">
+                                <rect key="frame" x="800" y="115" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Add To Invoice">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="AddToInvoice_TouchUpInside:" destination="1171" eventType="touchUpInside" id="1177"/>
+                                    <action selector="AddToInvoice_TouchUpInside:" destination="1144" id="1180" eventType="touchUpInside"/>
+                                </connections>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="849" y="54" width="175" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1190" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="592" y="287" width="80" height="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                                </state>
+                                <connections>
+                                    <action selector="ItemCodeButton_TouchUpInside:" destination="1144" id="1199" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="GL" lineBreakMode="tailTruncation" minimumFontSize="10" id="1198" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="452" y="287" width="40" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="350" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1299" fixedFrame="YES">
+                                <rect key="frame" x="800" y="258" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Get Update ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UIButton538_TouchUpInside:" destination="1301" eventType="touchUpInside" id="1300"/>
+                                    <action selector="UIButton538_TouchUpInside:" destination="1303" id="1302" eventType="touchUpInside"/>
+                                    <action selector="UpdateItem_TouchUpInside:" destination="1144" id="1304" eventType="touchUpInside"/>
+                                </connections>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="849" y="140" width="175" height="30"/>
+                                </variation>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="Metal" destination="1163" id="name-outlet-1163"/>
+                        <outlet property="Secret" destination="1162" id="name-outlet-1162"/>
+                        <outlet property="TagPrice" destination="1161" id="name-outlet-1161"/>
+                        <outlet property="Sku" destination="1160" id="name-outlet-1160"/>
+                        <outlet property="InfoLine1" destination="1168" id="name-outlet-1168"/>
+                        <outlet property="InfoLine2" destination="1167" id="name-outlet-1167"/>
+                        <outlet property="InfoLine3" destination="1165" id="name-outlet-1165"/>
+                        <outlet property="AddToInvoice" destination="1176" id="name-outlet-1176"/>
+                        <outlet property="CreateAppraisal" destination="1174" id="name-outlet-1174"/>
+                        <outlet property="MoveItem" destination="1172" id="name-outlet-1172"/>
+                        <outlet property="ReplaceImage" destination="1169" id="name-outlet-1169"/>
+                        <outlet property="ItemCodeTextField" destination="1153" id="name-outlet-1153"/>
+                        <outlet property="GLCostTextField" destination="1154" id="name-outlet-1154"/>
+                        <outlet property="ItemCodeButton" destination="1190" id="name-outlet-1190"/>
+                        <outlet property="UpdateItem" destination="1299" id="name-outlet-1299"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1146" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3332" y="-633"/>
+        </scene>
+        <scene sceneID="1286">
+            <objects>
+                <viewController id="1287" sceneMemberID="viewController" customClass="ItemPhotosViewController" storyboardIdentifier="ItemPhotosViewController" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1284"/>
+                        <viewControllerLayoutGuide type="bottom" id="1285"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1288">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1289" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4398" y="-631"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Images/no-thumb.png" width="200" height="200"/>
+        <image name="Images/whaleNecklase.jpg" width="448" height="300"/>
+        <image name="Images/180x180-Greenleaf.jpg" width="180" height="180"/>
+        <image name="Images/250x250-Greenleaf-with-text.jpg" width="250" height="250"/>
+        <image name="Photos/photo1.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo10.jpeg" width="1333" height="1000"/>
+        <image name="Photos/photo11.jpeg" width="1333" height="1000"/>
+        <image name="Photos/photo12.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo13.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo14.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo15.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo16.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo17.jpeg" width="1339" height="1000"/>
+        <image name="Photos/photo18.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo19.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo2.jpeg" width="1333" height="1000"/>
+        <image name="Photos/photo20.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo21.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo22.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo23.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo24.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo25.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo26.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo3.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo4.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo5.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo6.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo7.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo8.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo9.jpeg" width="1400" height="933"/>
+        <image name="Thumbnails/thumb1.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb10.jpeg" width="119" height="89"/>
+        <image name="Thumbnails/thumb11.jpeg" width="119" height="89"/>
+        <image name="Thumbnails/thumb12.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb13.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb14.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb15.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb16.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb17.jpeg" width="119" height="89"/>
+        <image name="Thumbnails/thumb18.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb19.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb2.jpeg" width="119" height="89"/>
+        <image name="Thumbnails/thumb20.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb21.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb22.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb23.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb24.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb25.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb26.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb3.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb4.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb5.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb6.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb7.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb8.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb9.jpeg" width="119" height="79"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="iPad"/>
+        <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
+    </simulatedMetricsContainer>
+</document>

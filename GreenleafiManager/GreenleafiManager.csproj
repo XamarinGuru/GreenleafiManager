@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{0783BC4B-46D7-45EA-9162-EEBE8FF78A08}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GreenleafiManager</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>GreenleafiManager</AssemblyName>
+    <XamarinInsightsApiKey>2193a63ac501fc59babfec65b7d6b0561d20a5da</XamarinInsightsApiKey>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchFastDev>True</MtouchFastDev>
+    <MtouchDebug>True</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchSdkVersion>
+    </MtouchSdkVersion>
+    <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchExtraArgs>--linkskip=TLTagsControl</MtouchExtraArgs>
+    <CodesignProvision>
+    </CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignKey>iPhone Distribution: Ryan Richards (24LTBU7Q7H)</CodesignKey>
+    <CodesignProvision>WC2 Dist</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <WarningsNotAsErrors>
+    </WarningsNotAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>false</MtouchProfiling>
+    <CodesignProvision>
+    </CodesignProvision>
+    <MtouchExtraArgs>--linkskip=TLTagsControl.dll</MtouchExtraArgs>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchSdkVersion>
+    </MtouchSdkVersion>
+    <MtouchVerbosity>
+    </MtouchVerbosity>
+    <MtouchUseLlvm>
+    </MtouchUseLlvm>
+    <MtouchUseThumb>
+    </MtouchUseThumb>
+    <IpaIncludeArtwork>
+    </IpaIncludeArtwork>
+    <IpaMetadata>
+    </IpaMetadata>
+    <MtouchI18n>
+    </MtouchI18n>
+    <OptimizePNGs>
+    </OptimizePNGs>
+    <OnDemandResourcesInitialInstallTags>
+    </OnDemandResourcesInitialInstallTags>
+    <OnDemandResourcesPrefetchOrder>
+    </OnDemandResourcesPrefetchOrder>
+    <NoWarn>
+    </NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <LangVersion>Default</LangVersion>
+    <NoStdLib>false</NoStdLib>
+    <PlatformTarget>anycpu</PlatformTarget>
+    <WarningsNotAsErrors>
+    </WarningsNotAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="MonoTouch.Dialog-1" />
+    <Reference Include="DataNuage.Azure.Blob.iOS-unified">
+      <HintPath>..\_external\DataNuage.Azure.Blob.iOS-unified.dll</HintPath>
+    </Reference>
+    <Reference Include="IG.Unified">
+      <HintPath>..\_external\IG.Unified.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Mobile">
+      <HintPath>..\_external\Microsoft.WindowsAzure.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Mobile.Ext">
+      <HintPath>..\_external\Microsoft.WindowsAzure.Mobile.Ext.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Mobile.SQLiteStore">
+      <HintPath>..\_external\Microsoft.WindowsAzure.Mobile.SQLiteStore.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Compression.Portable">
+      <HintPath>..\_external\Syncfusion.Compression.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.GridCommon.Portable">
+      <HintPath>..\_external\Syncfusion.GridCommon.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Linq.iOS">
+      <HintPath>..\_external\Syncfusion.Linq.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Portable">
+      <HintPath>..\_external\Syncfusion.Pdf.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfBarcode.iOS">
+      <HintPath>..\_external\Syncfusion.SfBarcode.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGrid.iOS">
+      <HintPath>..\_external\Syncfusion.SfDataGrid.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.portable">
+      <HintPath>..\_external\zxing.portable.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXingNetMobile">
+      <HintPath>..\_external\ZXingNetMobile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm">
+      <HintPath>packages\Microsoft.Data.Edm.5.8.2\lib\netstandard1.1\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>packages\SQLitePCLRaw.core.1.1.2\lib\Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.sqlite3">
+      <HintPath>packages\SQLitePCLRaw.provider.sqlite3.ios_unified.1.1.2\lib\Xamarin.iOS10\SQLitePCLRaw.provider.sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green">
+      <HintPath>packages\SQLitePCLRaw.bundle_green.1.1.2\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2">
+      <HintPath>packages\SQLitePCLRaw.bundle_green.1.1.2\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial">
+      <HintPath>packages\System.Spatial.5.8.2\lib\netstandard1.1\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="SQLitePCL">
+      <HintPath>..\packages\SQLitePCL.3.8.7.2\lib\Xamarin.iOS10\SQLitePCL.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCL.Ext">
+      <HintPath>..\packages\SQLitePCL.3.8.7.2\lib\Xamarin.iOS10\SQLitePCL.Ext.dll</HintPath>
+    </Reference>
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\packages\modernhttpclient.2.4.2\lib\Xamarin.iOS10\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.FluentLayouts.Touch">
+      <HintPath>..\packages\Cirrious.FluentLayout.2.6.0\lib\Xamarin.iOS10\Cirrious.FluentLayouts.Touch.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <InterfaceDefinition Include="Storyboards\Launch.storyboard" />
+    <InterfaceDefinition Include="ViewControllers\User\RolesAlertViewController.xib" />
+    <InterfaceDefinition Include="ViewControllers\Inventory\MasterInventoryController.xib" />
+    <InterfaceDefinition Include="Empty.xib" />
+    <InterfaceDefinition Include="ViewControllers\Reports\ReportViewController.xib" />
+    <InterfaceDefinition Include="Storyboards\Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+    <InterfaceDefinition Include="ViewControllers\AddCodeAlert.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewControllers\CustomAlert.cs" />
+    <Compile Include="ViewControllers\CustomAlertDetailPage.cs" />
+    <Compile Include="ViewControllers\NewCodeAlert.cs" />
+    <Compile Include="Services\ShopifyAdapter.cs" />
+    <Compile Include="DataClasses\CustomColumnDefinition.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="ViewControllers\Customer\MasterCustomerViewController.cs" />
+    <Compile Include="ViewControllers\Customer\MasterCustomerViewController.designer.cs">
+      <DependentUpon>MasterCustomerViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Customer\CustomerService.cs" />
+    <Compile Include="Models\CustomerNs.cs" />
+    <Compile Include="ViewControllers\Customer\CustomerDetailViewController.cs" />
+    <Compile Include="ViewControllers\Customer\CustomerDetailViewController.designer.cs">
+      <DependentUpon>CustomerDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Location\MasterLocationViewController.cs" />
+    <Compile Include="ViewControllers\Location\MasterLocationViewController.designer.cs">
+      <DependentUpon>MasterLocationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\LocationNs.cs" />
+    <Compile Include="Services\Location\LocationService.cs" />
+    <Compile Include="ViewControllers\Location\LocationDetailViewController.cs" />
+    <Compile Include="ViewControllers\Location\LocationDetailViewController.designer.cs">
+      <DependentUpon>LocationDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\User\MasterUserViewController.cs" />
+    <Compile Include="ViewControllers\User\MasterUserViewController.designer.cs">
+      <DependentUpon>MasterUserViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\User\UserService.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserNs.cs" />
+    <Compile Include="ViewControllers\User\UserDetailViewController.cs" />
+    <Compile Include="ViewControllers\User\UserDetailViewController.designer.cs">
+      <DependentUpon>UserDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\User\RolesAlertViewController.cs" />
+    <Compile Include="ViewControllers\User\RolesAlertViewController.designer.cs">
+      <DependentUpon>RolesAlertViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="ViewControllers\Reports\AlertViewController.cs" />
+    <Compile Include="ViewControllers\Reports\AlertViewController.designer.cs">
+      <DependentUpon>AlertViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Reports\SalesReportViewController.cs" />
+    <Compile Include="ViewControllers\Reports\SalesReportViewController.designer.cs">
+      <DependentUpon>SalesReportViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Reports\CurrentStockReportViewController.cs" />
+    <Compile Include="ViewControllers\Reports\CurrentStockReportViewController.designer.cs">
+      <DependentUpon>CurrentStockReportViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ListPickerViewModel.cs" />
+    <Compile Include="ViewControllers\DatePicker\ModalPickerViewController.cs" />
+    <Compile Include="ViewControllers\DatePicker\ModalPickerTransitionDelegate.cs" />
+    <Compile Include="ViewControllers\DatePicker\ModalPickerAnimatedTransitioning.cs" />
+    <Compile Include="ViewControllers\DatePicker\ModalPickerAnimatedDismissed.cs" />
+    <Compile Include="ViewControllers\Reports\SalesReportResultViewController.cs" />
+    <Compile Include="ViewControllers\Reports\CurrentStockReportResultViewController.cs" />
+    <Compile Include="ViewControllers\Inventory\MasterInventoryViewController.cs" />
+    <Compile Include="ViewControllers\Inventory\MasterInventoryViewController.designer.cs" />
+    <Compile Include="ViewControllers\Menu\MenuViewController.cs" />
+    <Compile Include="ViewControllers\Menu\MenuViewController.designer.cs">
+      <DependentUpon>MenuViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Inventory\DetailViewController.cs" />
+    <Compile Include="ViewControllers\Inventory\DetailViewController.designer.cs">
+      <DependentUpon>DetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Inventory\ItemPhotosViewController.cs" />
+    <Compile Include="ViewControllers\Inventory\ItemPhotosViewController.designer.cs">
+      <DependentUpon>ItemPhotosViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Inventory\TagEditorViewController.cs" />
+    <Compile Include="ViewControllers\Inventory\TagEditorViewController.designer.cs">
+      <DependentUpon>TagEditorViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Inventory\TapPrintPageRenderer.cs" />
+    <Compile Include="ViewControllers\Reports\LocationsAlertViewController.cs" />
+    <Compile Include="ViewControllers\Reports\LocationsAlertViewController.designer.cs">
+      <DependentUpon>LocationsAlertViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Reports\UsersAlertViewController.cs" />
+    <Compile Include="ViewControllers\Reports\UsersAlertViewController.designer.cs">
+      <DependentUpon>UsersAlertViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Reports\ReportViewController.cs" />
+    <Compile Include="ViewControllers\Reports\ReportViewController.designer.cs">
+      <DependentUpon>ReportViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\PaymentType.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="ViewControllers\Invoices\MasterInvoiceViewController.cs" />
+    <Compile Include="ViewControllers\Invoices\MasterInvoiceViewController.designer.cs">
+      <DependentUpon>MasterInvoiceViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="invoice.cs" />
+    <Compile Include="invoice.designer.cs">
+      <DependentUpon>invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SalesReportModel.cs" />
+    <Compile Include="Models\StockReportModel.cs" />
+    <Compile Include="Services\Report\ReportsService.cs" />
+    <Compile Include="Controls\ActionSheetDatePicker.cs" />
+    <Compile Include="ViewControllers\Invoices\InvoiceCreateViewController.cs" />
+    <Compile Include="ViewControllers\Invoices\InvoiceCreateViewController.designer.cs" />
+    <Compile Include="ViewControllers\Invoices\InvoiceDetailViewController.cs" />
+    <Compile Include="ViewControllers\Invoices\InvoiceDetailViewController.designer.cs" />
+    <Compile Include="ViewControllers\Invoices\InvoiceEditViewController.cs" />
+    <Compile Include="ViewControllers\Invoices\InvoiceEditViewController.designer.cs" />
+    <Compile Include="ViewControllers\Invoices\InvoicePreviewViewController.cs" />
+    <Compile Include="ViewControllers\Invoices\InvoicePreviewViewController.designer.cs" />
+    <Compile Include="ViewControllers\Inventory\InventoryDetailViewController.cs" />
+    <Compile Include="Source\InvoiceDetailPaymentSource.cs" />
+    <Compile Include="Source\InvoiceGridDataSource.cs" />
+    <Compile Include="Source\InvoiceItemTableSource.cs" />
+    <Compile Include="Source\InvoicePaymentTableSource.cs" />
+    <Compile Include="Services\Invoice\InvoiceService.cs" />
+    <Compile Include="DataClasses\CommonClasses.cs" />
+    <Compile Include="DataClasses\ExtensionClasses.cs" />
+    <Compile Include="Cell\InvoiceDetailPaymentCell.cs" />
+    <Compile Include="Cell\InvoiceGridCell.cs" />
+    <Compile Include="Cell\InvoiceItemCell.cs" />
+    <Compile Include="Cell\InvoicePaymentCell.cs" />
+    <Compile Include="ViewControllers\Inventory\InventoryDetailViewController.designer.cs" />
+    <Compile Include="Controls\EnhancedToolbar.cs" />
+    <Compile Include="Controls\KeyboardHandler.cs" />
+    <Compile Include="Models\InvoiceItems.cs" />
+    <Compile Include="Models\InvoiceFilter.cs" />
+    <Compile Include="Models\PaymentPaiedByLogic.cs" />
+    <Compile Include="Services\MasterService.cs" />
+    <Compile Include="Services\AzureService.cs" />
+    <Compile Include="Services\Inventory\InventoryService.cs" />
+    <Compile Include="Models\ImageData.cs" />
+    <Compile Include="ViewControllers\Invoices\InvoiceNoteChangePopup.cs" />
+    <Compile Include="ViewControllers\Inventory\InventoryDetailsViewController.cs" />
+    <Compile Include="ViewControllers\Inventory\InventoryDetailsViewController.designer.cs">
+      <DependentUpon>InventoryDetailsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\KeyboardHelper.cs" />
+    <Compile Include="ViewControllers\Inventory\ShopifyProdcutDetailsVIewController.cs" />
+    <Compile Include="ViewControllers\Inventory\ShopifyProdcutDetailsVIewController.designer.cs">
+      <DependentUpon>ShopifyProdcutDetailsVIewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Inventory\PhotoViewerViewController.cs" />
+    <Compile Include="ViewControllers\Inventory\PhotoViewerViewController.designer.cs">
+      <DependentUpon>PhotoViewerViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Reports\SalesReportResultsViewController.cs" />
+    <Compile Include="ViewControllers\Reports\SalesReportResultsViewController.designer.cs">
+      <DependentUpon>SalesReportResultsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Reports\CurrentStockReportResultsViewController.cs" />
+    <Compile Include="ViewControllers\Reports\CurrentStockReportResultsViewController.designer.cs">
+      <DependentUpon>CurrentStockReportResultsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Inventory\LoadingViewController.cs" />
+    <Compile Include="ViewControllers\Inventory\LoadingViewController.designer.cs">
+      <DependentUpon>LoadingViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Inventory\LoadingItemDetailsViewController.cs" />
+    <Compile Include="ViewControllers\Inventory\LoadingItemDetailsViewController.designer.cs">
+      <DependentUpon>LoadingItemDetailsViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\Xamarin.Insights.1.12.3\build\Xamarin.iOS10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.12.3\build\Xamarin.iOS10\Xamarin.Insights.targets')" />
+  <ItemGroup>
+    <BundleResource Include="Images\no-thumb.png" />
+    <BundleResource Include="Images\whaleNecklase.jpg" />
+    <BundleResource Include="Resources\Photos\photo1.jpeg" />
+    <BundleResource Include="Resources\Photos\photo10.jpeg" />
+    <BundleResource Include="Resources\Photos\photo11.jpeg" />
+    <BundleResource Include="Resources\Photos\photo12.jpeg" />
+    <BundleResource Include="Resources\Photos\photo13.jpeg" />
+    <BundleResource Include="Resources\Photos\photo14.jpeg" />
+    <BundleResource Include="Resources\Photos\photo15.jpeg" />
+    <BundleResource Include="Resources\Photos\photo16.jpeg" />
+    <BundleResource Include="Resources\Photos\photo17.jpeg" />
+    <BundleResource Include="Resources\Photos\photo18.jpeg" />
+    <BundleResource Include="Resources\Photos\photo19.jpeg" />
+    <BundleResource Include="Resources\Photos\photo2.jpeg" />
+    <BundleResource Include="Resources\Photos\photo20.jpeg" />
+    <BundleResource Include="Resources\Photos\photo21.jpeg" />
+    <BundleResource Include="Resources\Photos\photo22.jpeg" />
+    <BundleResource Include="Resources\Photos\photo23.jpeg" />
+    <BundleResource Include="Resources\Photos\photo24.jpeg" />
+    <BundleResource Include="Resources\Photos\photo25.jpeg" />
+    <BundleResource Include="Resources\Photos\photo26.jpeg" />
+    <BundleResource Include="Resources\Photos\photo3.jpeg" />
+    <BundleResource Include="Resources\Photos\photo4.jpeg" />
+    <BundleResource Include="Resources\Photos\photo5.jpeg" />
+    <BundleResource Include="Resources\Photos\photo6.jpeg" />
+    <BundleResource Include="Resources\Photos\photo7.jpeg" />
+    <BundleResource Include="Resources\Photos\photo8.jpeg" />
+    <BundleResource Include="Resources\Photos\photo9.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb1.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb10.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb11.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb12.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb13.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb14.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb15.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb16.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb17.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb18.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb19.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb2.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb20.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb21.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb22.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb23.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb24.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb25.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb26.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb3.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb4.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb5.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb6.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb7.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb8.jpeg" />
+    <BundleResource Include="Resources\Thumbnails\thumb9.jpeg" />
+    <BundleResource Include="Resources\greeleafDiamondsBackground.png" />
+    <BundleResource Include="Resources\bghome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Old\" />
+    <Folder Include="Services\Inventory\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShopifyAdapter\ShopifyAPILibrary.csproj">
+      <Project>{35165008-E3AE-4B9C-8EA7-E90B08A887F0}</Project>
+      <Name>ShopifyAPILibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TLTagsControl\TLTagsControl.csproj">
+      <Project>{C61317ED-26B6-4F9C-88B2-66D0C9543BA2}</Project>
+      <Name>TLTagsControl</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\100x100-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\114x114-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\120x120-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\144x144-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\152x152-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\180x180-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\29x29-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\40x40-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\50x50-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\57x57-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\58x58-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\72x72-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\76x76-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\80x80-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\87x87-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\29x29-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58x58-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87x87-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80x80-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\57x57-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\114x114-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180x180-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40x40-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\50x50-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\100x100-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\72x72-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\144x144-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\76x76-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152x152-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167x167-Greenleaf.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
+</Project>

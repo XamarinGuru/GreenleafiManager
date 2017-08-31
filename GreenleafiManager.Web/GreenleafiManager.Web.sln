@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenleafiManager.Web", "GreenleafiManager.Web\GreenleafiManager.Web.csproj", "{9897E730-CB6D-449B-9C17-D54FFB98F078}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenleafiManager.Services", "GreenleafiManager.Services\GreenleafiManager.Services.csproj", "{A024303A-18BB-42A2-8494-EC7714D491FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9897E730-CB6D-449B-9C17-D54FFB98F078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9897E730-CB6D-449B-9C17-D54FFB98F078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9897E730-CB6D-449B-9C17-D54FFB98F078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9897E730-CB6D-449B-9C17-D54FFB98F078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A024303A-18BB-42A2-8494-EC7714D491FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A024303A-18BB-42A2-8494-EC7714D491FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A024303A-18BB-42A2-8494-EC7714D491FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A024303A-18BB-42A2-8494-EC7714D491FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,70 @@
+﻿using System.Linq;
+using System.Threading.Tasks;
+using System.Web.Http;
+using System.Web.Http.Controllers;
+using System.Web.Http.OData;
+using GreenLeafMobileService.DataObjects;
+using GreenLeafMobileService.Models;
+using Microsoft.Azure.Mobile.Server;
+using Microsoft.Azure.Mobile.Server.Authentication;
+using System;
+
+namespace GreenLeafMobileService.Controllers
+{
+    //[AuthorizeLevel ( AuthorizationLevel.User )]
+    public class LocationController : TableController<Location>
+    {
+        protected override void Initialize(HttpControllerContext controllerContext)
+        {
+            base.Initialize(controllerContext);
+            var context = new GreenLeafMobileContext();
+            DomainManager = new EntityDomainManager<Location>(context, Request);//, Services );
+        }
+
+        // GET tables/Location
+        public IQueryable<Location> GetAllLocation()
+        {
+            try
+            {
+                return Query();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        // GET tables/Location/48D68C86-6EA6-4C25-AA33-223FC9A27959
+        public SingleResult<Location> GetLocation(string id)
+        {
+            return Lookup(id);
+        }
+
+        // PATCH tables/Location/48D68C86-6EA6-4C25-AA33-223FC9A27959
+        public Task<Location> PatchLocation(string id, Delta<Location> patch)
+        {
+            return UpdateAsync(id, patch);
+        }
+
+        // POST tables/Location
+        public async Task<IHttpActionResult> PostLocation(Location item)
+        {
+            try
+            {
+                var current = await InsertAsync(item);
+                return CreatedAtRoute("Tables", new { id = current.Id }, current);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        // DELETE tables/Location/48D68C86-6EA6-4C25-AA33-223FC9A27959
+        public Task DeleteLocation(string id)
+        {
+            return DeleteAsync(id);
+        }
+    }
+}

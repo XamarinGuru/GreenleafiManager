@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="4" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                    <rect key="frame" x="251" y="32" width="42" height="21"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" id="5" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                    <rect key="frame" x="94" y="150" width="97" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" id="6" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                    <rect key="frame" x="94" y="229" width="97" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+        </view>
+    </objects>
+    <resources>
+        <image name="Images/no-thumb.png" width="200" height="200"/>
+        <image name="Images/whaleNecklase.jpg" width="448" height="300"/>
+        <image name="Images/250x250-Greenleaf-with-text.jpg" width="250" height="250"/>
+        <image name="Photos/photo1.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo10.jpeg" width="1333" height="1000"/>
+        <image name="Photos/photo11.jpeg" width="1333" height="1000"/>
+        <image name="Photos/photo12.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo13.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo14.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo15.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo16.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo17.jpeg" width="1339" height="1000"/>
+        <image name="Photos/photo18.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo19.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo2.jpeg" width="1333" height="1000"/>
+        <image name="Photos/photo20.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo21.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo22.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo23.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo24.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo25.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo26.jpeg" width="1400" height="788"/>
+        <image name="Photos/photo3.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo4.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo5.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo6.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo7.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo8.jpeg" width="1400" height="933"/>
+        <image name="Photos/photo9.jpeg" width="1400" height="933"/>
+        <image name="Thumbnails/thumb1.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb10.jpeg" width="119" height="89"/>
+        <image name="Thumbnails/thumb11.jpeg" width="119" height="89"/>
+        <image name="Thumbnails/thumb12.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb13.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb14.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb15.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb16.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb17.jpeg" width="119" height="89"/>
+        <image name="Thumbnails/thumb18.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb19.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb2.jpeg" width="119" height="89"/>
+        <image name="Thumbnails/thumb20.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb21.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb22.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb23.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb24.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb25.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb26.jpeg" width="119" height="67"/>
+        <image name="Thumbnails/thumb3.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb4.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb5.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb6.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb7.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb8.jpeg" width="119" height="79"/>
+        <image name="Thumbnails/thumb9.jpeg" width="119" height="79"/>
+        <image name="Images/plus.png" width="512" height="512"/>
+    </resources>
+</document>
